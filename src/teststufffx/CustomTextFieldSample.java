@@ -88,5 +88,6 @@ public class CustomTextFieldSample extends Application {
 
     public static void main(String[] args) {
         launch(args);
+//        Application.launch(CustomTextFieldSample.class, args);
     }
 }
