@@ -8,9 +8,11 @@ package teststufffx;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -34,8 +36,23 @@ public class TestStuffFX extends Application {
             }
         });
 
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        Button btn2 = new Button();
+        btn2.setText("Say 'Hello World' V2");
+        btn2.setDefaultButton(false);
+        btn2.setOnAction(e -> {
+            System.out.println("Hello World(V2)! #" + nbr++);
+        });
+
+        Button btn3 = new Button("show Window");
+        btn3.setOnAction(e -> {
+            String answer = WindowTwo.display("Second Window", "Give me some advice:");
+            System.out.println("Answer from second window: " + answer);
+        });
+//        StackPane root = new StackPane();
+        VBox root = new VBox(20);
+        root.setAlignment(Pos.CENTER);
+        root.getChildren().addAll(btn,btn2,btn3);
+//        root.getChildren().add(btn2);
 
         Scene scene = new Scene(root, 300, 250);
 
